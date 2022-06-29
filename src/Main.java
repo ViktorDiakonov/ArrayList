@@ -32,12 +32,19 @@ public class Main {
         number.removeByValue(20);
         printInfo(number);
 
-        System.out.println("Проверяю, есть или нет элементы в коллекции " +
-                "(false-есть, true-нет): " + number.isEmpty());
+        System.out.println("Проверяю, есть или нет элементы в коллекции методом" +
+                "(isEmpty()): " + number.isEmpty());
+
+        System.out.print("Проверка наличия элементов в коллекции своим методом: ");
+        number.verificationList();
 
         System.out.print("Чищу коллекцию: ");
         number.clear();
         printInfo(number);
+
+        // другой метод проверки наличия элементов в коллекции
+        System.out.print("Проверка наличия элементов в коллекции: ");
+        number.verificationList();
     }
 
     // метод для вывода результатов действий в коллекции

@@ -22,6 +22,16 @@ public class Custom implements List<Integer> {
                 '}';
     }
 
+    public void verificationList() {
+        String s = "элементы есть";
+        for (int i = 0; i < size; i++) {
+            if (Custom[i] != 0) {
+                break;
+            } else s = "элементов нет";
+        }
+        System.out.println(s);
+    }
+
     public static int[] array(int size) {
         int[] number = new int[size];
         for (int i = 0; i < size - 1; i++) {
