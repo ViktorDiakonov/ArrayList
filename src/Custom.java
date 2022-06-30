@@ -4,7 +4,7 @@ public class Custom implements List<Integer> {
 
     // задаю переменные
     public int size;
-    public int element = 0;
+    public int element;
     int[] Custom;
 
     // создаю конструктор класса
@@ -13,7 +13,7 @@ public class Custom implements List<Integer> {
         this.Custom = array(size);
 
     }
-
+    // переопределяю метод
     @Override
     public String toString() {
         return "Custom{" +
@@ -22,16 +22,18 @@ public class Custom implements List<Integer> {
                 '}';
     }
 
+    // "Мой метод", аналог isEmpty
     public void verificationList() {
-        String s = "элементы есть";
+        String s = "list is not empty";
         for (int i = 0; i < size; i++) {
             if (Custom[i] != 0) {
                 break;
-            } else s = "элементов нет";
+            } else s = "the list is empty";
         }
         System.out.println(s);
     }
 
+    // создаю массив
     public static int[] array(int size) {
         int[] number = new int[size];
         for (int i = 0; i < size - 1; i++) {
@@ -40,15 +42,16 @@ public class Custom implements List<Integer> {
         return number;
     }
 
+    // метод добавляем элемент в конец списка
     public void add(int element) {
         this.element++;
         if (this.element > this.size) {
-            System.out.println("Custom is full");
             return;
         }
         Custom[this.element - 1] = element;
     }
 
+    // метод добавляем элемент в указанный индекс
     public boolean add(int index, int element) {
         this.element++;
         int buffer;
@@ -66,6 +69,7 @@ public class Custom implements List<Integer> {
         return true;
     }
 
+    // метод проверяет массив на наличие в нем элементов и возвращает true или false
     @Override
     public boolean isEmpty() {
         boolean result = true;
@@ -78,16 +82,19 @@ public class Custom implements List<Integer> {
         return result;
     }
 
+    // метод вычищает массив от элементов
     @Override
     public void clear() {
         Custom = array(size);
     }
 
+    // метод возвращает значение по указанному индексу
     @Override
     public Integer get(int index) {
         return Custom[index];
     }
 
+    // метод возвращает размер массива
     @Override
     public int size() {
         return this.size;
@@ -102,12 +109,14 @@ public class Custom implements List<Integer> {
 
     }
 
+    // метод удаляет элемент по указанному индексу
     @Override
     public Integer remove(int index) {
         Custom[index] = 0;
         return null;
     }
 
+    // метод устанавливает новый элемент по указанному индексу
     @Override
     public Integer set(int index, Integer element) {
         Custom[index] = element;
